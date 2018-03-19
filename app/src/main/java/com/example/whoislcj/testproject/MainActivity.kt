@@ -9,17 +9,17 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
       var person:Person? = null;
 
-    fun Person.test1(str:String):Unit{
+   private  fun Person.test1(str:String):Unit{
         Log.e("String",str);
         age+=1;
         Log.e("String",age.toString());
     }
 
-    fun  Person.test():Unit{
+   fun  Person.test():Unit{
         Log.e("String","扩展函数");
     }
 
-    fun Person?.test2():String{
+    private fun Person?.test2():String{
         if(this==null){
             return "";
         }
