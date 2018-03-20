@@ -11,15 +11,8 @@ import com.example.whoislcj.testproject.Person
 /**
  * Created by whoislcj on 2018/3/20.
  */
-class LoadDataPresenter : ILoadDataPresenter {
-    var iLoadDataView: ILoadDataView<UserInfo>;
+class LoadDataPresenter(var iLoadDataView: ILoadDataView<UserInfo>) : ILoadDataPresenter {
     var iUserInfoModel: IUserInfoModel;
-
-    constructor(iLoadDataView: ILoadDataView<UserInfo>) {
-        this.iLoadDataView = iLoadDataView
-        this.iUserInfoModel = UserInfoModelImpl();
-    }
-
 
     override fun loadData() {
         iLoadDataView.startLoading()
@@ -30,6 +23,10 @@ class LoadDataPresenter : ILoadDataPresenter {
             }
         });
 
+    }
+
+    init {
+        this.iUserInfoModel = UserInfoModelImpl()
     }
 }
 
