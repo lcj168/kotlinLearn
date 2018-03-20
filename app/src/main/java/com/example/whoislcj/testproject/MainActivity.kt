@@ -1,10 +1,12 @@
 package com.example.whoislcj.testproject
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import com.example.whoislcj.kotlin.view.activity.MvpDemoActivity
 
 class MainActivity : AppCompatActivity() {
       var person:Person? = null;
@@ -55,13 +57,14 @@ class MainActivity : AppCompatActivity() {
         val sum: (Int, Int) -> Int = { a, b -> a + b }
         textView.text = String.format("%d", sum(1, 3))
         textView.setOnClickListener({
-
+            val intent =Intent(this, MvpDemoActivity::class.java);
+            startActivity(intent);
         });
 
-        textView.setOnClickListener(View.OnClickListener{
-
-
-        });
+//        textView.setOnClickListener(View.OnClickListener{
+//
+//
+//        });
 
         initData()
 
